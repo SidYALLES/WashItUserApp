@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1024538188102",
+    "firebase_url": "https://washit-4da5a.firebaseio.com",
+    "project_id": "washit-4da5a",
+    "storage_bucket": "washit-4da5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024538188102:android:49ca523c952f2046",
+        "android_client_info": {
+          "package_name": "com.washit.washit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024538188102-u3u06kctrpvkvq2i21ndbguj1qhjpmnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJitM2kMTre3YW6eG2PHhoaSe2dn_cAKY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
