@@ -3,13 +3,22 @@ package com.washit.washit;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    private FrameLayout mMainFrame;
+    //private TextView mTextMessage;
+    private contactUsFragment contactUs;
+    private HomeFragment homeFrag;
+    private NotificationFragment notificationFragment;
+    private ProfilFragment profilFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -18,16 +27,20 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    setFragment(homeFrag);
+                    //mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_contact);
+                    setFragment(contactUs);
+                   // mTextMessage.setText(R.string.title_contact);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    setFragment(notificationFragment);
+                    //mTextMessage.setText(R.string.title_notifications);
                     return true;
                 case R.id.navigation_profil:
-                    mTextMessage.setText("profil");
+                    setFragment(profilFragment);
+                   // mTextMessage.setText("profil");
                     return true;
             }
             return false;
@@ -39,9 +52,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
+        contactUs = new contactUsFragment();
+        homeFrag = new HomeFragment();
+        notificationFragment = new NotificationFragment();
+        profilFragment = new ProfilFragment();
+
+        setFragment(homeFrag);
+        // do this line after creation the home fragment so the first fragment to load is the home by default .
+       // mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+
+    private void setFragment (Fragment fragment) {
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace( R.id.main_frame, fragment);
+        fragmentTransaction.commit();
+
+    }
 }
