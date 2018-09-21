@@ -2,6 +2,7 @@ package com.washit.washit;
 
 
 import android.os.Bundle;
+
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -23,14 +24,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Date;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
+
     private RecyclerView mPackagesList;
     private DatabaseReference mDatabaseReference;
     private View view;
     FirebaseRecyclerAdapter<Package,PackageViewHolder> firebaseRecyclerAdapter;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -40,6 +44,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         view= inflater.inflate(R.layout.fragment_home, container, false);
         mDatabaseReference=FirebaseDatabase.getInstance().getReference().child("Packages");
         mDatabaseReference.keepSynced(true);
@@ -117,4 +122,8 @@ public class HomeFragment extends Fragment {
 
 
     }
+
+    }
+
+
 }
