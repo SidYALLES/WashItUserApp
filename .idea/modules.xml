@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-
-      <module fileurl="file://$PROJECT_DIR$/WashItUserApp.iml" filepath="$PROJECT_DIR$/WashItUserApp.iml" />
-
+      <module fileurl="file://$PROJECT_DIR$/WashItUserApp-master.iml" filepath="$PROJECT_DIR$/WashItUserApp-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
