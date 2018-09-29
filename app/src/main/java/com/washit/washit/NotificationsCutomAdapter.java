@@ -88,6 +88,7 @@ public class NotificationsCutomAdapter extends RecyclerView.Adapter<Notification
         public MyViewHolder(final View itemView) {
             super(itemView);
 
+
             image = itemView.findViewById(R.id.notification_image);
             title = itemView.findViewById(R.id.title);
             date = itemView.findViewById(R.id.date);
